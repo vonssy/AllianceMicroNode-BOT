@@ -222,13 +222,13 @@ class AllianceMicroNode:
             else:
                 self.log(
                     f"{Fore.MAGENTA+Style.BRIGHT}[ Cluster Blocks{Style.RESET_ALL}"
-                    f"{Fore.YELLOW+Style.BRIGHT} Not Available to Open {Style.RESET_ALL}"
+                    f"{Fore.YELLOW+Style.BRIGHT} Not Available for Open {Style.RESET_ALL}"
                     f"{Fore.MAGENTA+Style.BRIGHT}]{Style.RESET_ALL}"
                 )
 
             quests = self.quest_lists(hash, query, user_id)
             if quests and quests['status'] == 'success':
-                for quest in quests['data']['quests']:
+                for quest in quests['data']['quests']['mission']:
                     quest_id = str(quest['id'])
                     completed = quest['completed']
                     claimed = quest['claimed']
